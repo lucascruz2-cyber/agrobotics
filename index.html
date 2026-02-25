@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroBotics | Monitoramento Agrícola como Serviço (MaaS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        agro: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981', // Emerald 500
+                            600: '#059669', // Emerald 600
+                            900: '#064e3b', // Emerald 900
+                        },
+                        deep: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.6)), url('https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-deep-950 text-gray-200 font-sans antialiased selection:bg-agro-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-card border-b-0" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="cpu" class="h-8 w-8 text-agro-500"></i>
+                    <span class="font-bold text-2xl tracking-tight text-white">Agro<span class="text-agro-500">Botics</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solucao" class="text-sm font-medium hover:text-agro-500 transition-colors">A Solução</a>
+                    <a href="#diferenciais" class="text-sm font-medium hover:text-agro-500 transition-colors">Diferenciais</a>
+                    <a href="#roi" class="text-sm font-medium hover:text-agro-500 transition-colors">Retorno (ROI)</a>
+                    <a href="#impacto" class="text-sm font-medium hover:text-agro-500 transition-colors">Impacto ESG</a>
+                    <a href="#contato" class="bg-agro-500 hover:bg-agro-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-agro-500/30">
+                        Agendar Demo
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-deep-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#solucao" class="block px-3 py-2 rounded-md text-base font-medium hover:text-agro-500 hover:bg-gray-800">A Solução</a>
+                <a href="#diferenciais" class="block px-3 py-2 rounded-md text-base font-medium hover:text-agro-500 hover:bg-gray-800">Diferenciais</a>
+                <a href="#roi" class="block px-3 py-2 rounded-md text-base font-medium hover:text-agro-500 hover:bg-gray-800">Retorno (ROI)</a>
+                <a href="#contato" class="block mt-4 text-center bg-agro-500 text-white px-5 py-3 rounded-md font-medium">Agendar Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative hero-bg pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-agro-500/10 border border-agro-500/30 text-agro-500 text-sm font-semibold mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-agro-500 animate-pulse"></span>
+                        Solução DeepTech para Tomate Industrial
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        O futuro do monitoramento agrícola <span class="text-transparent bg-clip-text bg-gradient-to-r from-agro-500 to-emerald-300">já está no campo.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                        Robótica quadrúpede autônoma, Inteligência Artificial e sensores multimodais operando abaixo do dossel para detectar pragas e estresse na lavoura antes que o dano ocorra.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contato" class="flex justify-center items-center gap-2 bg-agro-500 hover:bg-agro-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                            Seja um Parceiro Pioneiro
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#solucao" class="flex justify-center items-center gap-2 bg-transparent border border-gray-600 hover:border-gray-400 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-all">
+                            Entenda a Tecnologia
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:block relative">
+                    <!-- Placeholder visual representation of the robot -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-agro-500/20 to-transparent rounded-full blur-3xl"></div>
+                    <div class="relative glass-card rounded-2xl p-2 border border-gray-700 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img src="robo.png" onerror="this.src='https://images.unsplash.com/photo-1633526543814-9718c8922b7a?q=80&w=2070&auto=format&fit=crop'" alt="Robô quadrúpede no campo" class="rounded-xl w-full h-auto max-h-[650px] object-cover object-center opacity-90">
+                        <!-- Floating badges -->
+                        <div class="absolute -bottom-6 -left-6 glass-card px-4 py-3 rounded-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                            <div class="bg-green-500/20 p-2 rounded-lg">
+                                <i data-lucide="target" class="text-agro-500 h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Meta de Acurácia</p>
+                                <p class="text-lg font-bold text-white">85%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Problema e a Solução -->
+    <section id="solucao" class="py-24 bg-deep-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">MaaS: Monitoramento Agrícola como Serviço</h2>
+                <p class="text-gray-400 text-lg">Substituímos a análise humana subjetiva e as limitações dos drones por uma inspeção robótica contínua, georreferenciada e de alta fidelidade.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-deep-800 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-agro-500">
+                        <i data-lucide="bug" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Detecção Precoce</h3>
+                    <p class="text-gray-400 leading-relaxed">Identificamos precocemente pragas como a mosca-branca e traça-do-tomateiro, além de anomalias morfológicas e estresse hídrico.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-agro-500/10 rounded-bl-full -z-10"></div>
+                    <div class="bg-deep-800 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-agro-500">
+                        <i data-lucide="bot" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Robótica Quadrúpede</h3>
+                    <p class="text-gray-400 leading-relaxed">Utilizamos plataformas como o Unitree Go2. Patrulhamento próximo ao solo, superando terrenos acidentados e a oclusão foliar do baixeiro.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-deep-800 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-agro-500">
+                        <i data-lucide="map" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mapas de Calor 3D</h3>
+                    <p class="text-gray-400 leading-relaxed">Dados processados em redes neurais otimizadas geram respostas acionáveis e visualização espacial de focos via web e mobile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais (Por que não drones?) -->
+    <section id="diferenciais" class="py-24 bg-deep-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Por que um robô quadrúpede?</h2>
+                    <p class="text-gray-400 text-lg mb-8">
+                        Os métodos atuais apresentam severas ineficiências para culturas complexas como o tomate industrial. O monitoramento manual é lento e exaustivo. Drones sofrem com oclusão foliar e espantam pragas.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 mt-1 bg-agro-500/20 p-2 rounded-lg text-agro-500">
+                                <i data-lucide="volume-x" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Operação Discreta e Silenciosa</h4>
+                                <p class="text-gray-400 mt-1">Sem a turbulência de ar dos drones, garantindo a preservação do comportamento de pragas (ex: mosca-branca) para monitoramento fidedigno.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 mt-1 bg-agro-500/20 p-2 rounded-lg text-agro-500">
+                                <i data-lucide="cloud-rain" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Resiliência Climática</h4>
+                                <p class="text-gray-400 mt-1">Supera as limitações climáticas e de altitude dos drones aéreos, com alta disponibilidade e operação em horários não convencionais.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 mt-1 bg-agro-500/20 p-2 rounded-lg text-agro-500">
+                                <i data-lucide="layers" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Visão Multimodal Sem Oclusão</h4>
+                                <p class="text-gray-400 mt-1">Sensores espectrais, térmicos e RGB operam na altura ideal, enxergando abaixo das folhas (baixeiro) onde a maioria das infestações começa.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <div class="glass-card rounded-2xl p-8 relative">
+                        <div class="absolute -top-4 -right-4 bg-agro-500 text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Inovação DeepTech</div>
+                        <h3 class="text-xl font-bold text-white border-b border-gray-700 pb-4 mb-4">Análise de Concorrentes</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-3 rounded-lg bg-red-900/20 border border-red-500/20">
+                                <span class="text-gray-300">Monitoramento Manual</span>
+                                <span class="text-red-400 text-sm font-medium">Lento, Subjetivo, Exaustivo</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 rounded-lg bg-yellow-900/20 border border-yellow-500/20">
+                                <span class="text-gray-300">Drones Aéreos</span>
+                                <span class="text-yellow-400 text-sm font-medium">Oclusão foliar, Espanta pragas</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 rounded-lg bg-orange-900/20 border border-orange-500/20">
+                                <span class="text-gray-300">Sensores Fixos</span>
+                                <span class="text-orange-400 text-sm font-medium">Cobertura engessada, Alto custo</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 rounded-lg bg-agro-900/40 border border-agro-500 mt-6 transform scale-105 shadow-lg shadow-agro-500/20">
+                                <span class="text-white font-bold flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="text-agro-500 w-5 h-5"></i>
+                                    AgroBotics (Nosso MaaS)
+                                </span>
+                                <span class="text-agro-400 text-sm font-bold">Contínuo, Preciso, Abaixo do Dossel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modelo de Negócio e ROI -->
+    <section id="roi" class="py-24 bg-deep-900 relative overflow-hidden">
+        <!-- Decorational background -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-agro-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-agro-500 font-semibold tracking-wider uppercase text-sm">Viabilidade e Retorno</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">Investimento com Payback Rápido</h2>
+                <p class="text-gray-400">Modelo B2B MaaS. Sem risco tecnológico para o produtor. Você paga pela inteligência e mapeamento, nós gerenciamos a frota.*</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Investimento -->
+                <div class="glass-card rounded-2xl p-8 border-t-4 border-gray-600">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="bg-gray-800 p-3 rounded-xl">
+                            <i data-lucide="calculator" class="w-6 h-6 text-gray-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Investimento Estimado</h3>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-white">R$ 5.000<span class="text-lg text-gray-400 font-normal">/ha</span></span>
+                        <p class="text-sm text-gray-400 mt-1">por safra (Assinatura MaaS)</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-agro-500 w-4 h-4"></i> Mapeamento contínuo</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-agro-500 w-4 h-4"></i> Acesso web e mobile (Mapas 3D)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-agro-500 w-4 h-4"></i> Zero custo de manutenção do robô</li>
+                    </ul>
+                </div>
+
+                <!-- Retorno -->
+                <div class="glass-card rounded-2xl p-8 border-t-4 border-agro-500 bg-agro-900/10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="bg-agro-500/20 p-3 rounded-xl">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-agro-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Retorno Projetado</h3>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-agro-400">R$ 7.373<span class="text-lg text-gray-400 font-normal">/ha</span></span>
+                        <p class="text-sm text-gray-400 mt-1">de retorno líquido projetado*</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center gap-2"><i data-lucide="arrow-down" class="text-agro-500 w-4 h-4"></i> 20% de economia em defensivos</li>
+                        <li class="flex items-center gap-2"><i data-lucide="arrow-up" class="text-agro-500 w-4 h-4"></i> Recuperação de até 7 ton/ha</li>
+                        <li class="flex items-center gap-2"><i data-lucide="clock" class="text-agro-500 w-4 h-4"></i> Payback dentro do ciclo (120 dias)</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-500 mt-8 max-w-2xl mx-auto">
+                * Valores baseados em estimativas preliminares e dados do setor (Ref. SEAPA-GO/2025). O custo de defensivos representa até 30% da produção atual. Uma aplicação localizada reduz drasticamente perdas que hoje chegam a 70% por detecção tardia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Impacto ESG -->
+    <section id="impacto" class="py-24 bg-deep-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 order-2 md:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <i data-lucide="leaf" class="w-8 h-8 text-agro-500 mx-auto mb-3"></i>
+                            <h4 class="font-bold text-white mb-1">Meio Ambiente</h4>
+                            <p class="text-xs text-gray-400">Menor lixiviação de defensivos no solo e água.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center mt-6">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-agro-500 mx-auto mb-3"></i>
+                            <h4 class="font-bold text-white mb-1">Segurança</h4>
+                            <p class="text-xs text-gray-400">Alimentos com menor resíduo químico.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <i data-lucide="users" class="w-8 h-8 text-agro-500 mx-auto mb-3"></i>
+                            <h4 class="font-bold text-white mb-1">Social</h4>
+                            <p class="text-xs text-gray-400">Menor exposição humana a agroquímicos.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center mt-6">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-agro-500 mx-auto mb-3"></i>
+                            <h4 class="font-bold text-white mb-1">Economia Local</h4>
+                            <p class="text-xs text-gray-400">Geração de empregos DeepTech no interior de Goiás.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Impacto Socioambiental</h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Nossa solução não foca apenas na rentabilidade, mas na resolução de um desafio ambiental crítico. A pressão global por métricas ESG exige a redução drástica de defensivos químicos.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Através da pulverização baseada em dados precisos, promovemos uma agricultura de precisão verdadeiramente sustentável, preservando o ecossistema local e oferecendo melhores condições de trabalho aos operadores de campo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcerias e Estágio -->
+    <section class="py-16 bg-deep-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xl font-semibold text-gray-400 mb-8">Apoiado por um ecossistema de inovação e parceiros estratégicos</h3>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Logos textuais como placeholders -->
+                <div class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="building" class="w-6 h-6"></i> IF Goiano
+                </div>
+                <div class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="rocket" class="w-6 h-6"></i> Incubadora Ello
+                </div>
+                <div class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="sprout" class="w-6 h-6"></i> AgroGomes
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-3xl mx-auto glass-card p-6 rounded-2xl inline-block text-left">
+                <div class="flex items-center gap-4 mb-2">
+                    <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Estágio Atual</span>
+                </div>
+                <p class="text-gray-300">
+                    <strong>Protótipo Testado.</strong> Rumo ao MVP em 12 meses com testes de campo (Transfer Learning em condições reais de luminosidade) e adequações regulatórias (segurança em robótica móvel e LGPD).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contato -->
+    <section id="contato" class="py-24 relative overflow-hidden bg-agro-900">
+        <div class="absolute inset-0 bg-gradient-to-b from-deep-950 to-transparent opacity-90"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Pronto para revolucionar sua lavoura?</h2>
+            <p class="text-xl text-gray-300 mb-10">Cadastre-se para ser um dos primeiros a receber nossa demonstração em campo no polo agrícola de Goiás.</p>
+            
+            <form class="glass-card p-8 rounded-2xl text-left max-w-2xl mx-auto" onsubmit="event.preventDefault(); alert('Obrigado pelo interesse! Entraremos em contato em breve.');">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Nome / Empresa</label>
+                        <input type="text" required class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500 focus:ring-1 focus:ring-agro-500 transition-colors" placeholder="João da Silva">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Hectares Plantados</label>
+                        <select class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500 focus:ring-1 focus:ring-agro-500 transition-colors">
+                            <option>Até 50 ha</option>
+                            <option>51 a 200 ha</option>
+                            <option>Mais de 200 ha</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-400 mb-2">E-mail de Contato</label>
+                    <input type="email" required class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500 focus:ring-1 focus:ring-agro-500 transition-colors" placeholder="contato@empresa.com.br">
+                </div>
+                <button type="submit" class="w-full bg-agro-500 hover:bg-agro-600 text-white font-bold py-4 rounded-lg transition-colors flex justify-center items-center gap-2">
+                    Solicitar Contato
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-950 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <i data-lucide="cpu" class="h-6 w-6 text-agro-500"></i>
+                <span class="font-bold text-xl tracking-tight text-white">Agro<span class="text-agro-500">Botics</span></span>
+            </div>
+            <div class="text-gray-500 text-sm text-center md:text-left">
+                &copy; 2026 AgroBotics. Todos os direitos reservados. Focado no Polo Agrícola de Goiás.
+            </div>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-gray-500 hover:text-agro-500 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="text-gray-500 hover:text-agro-500 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="text-gray-500 hover:text-agro-500 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-deep-950/90', 'shadow-lg');
+                navbar.classList.remove('border-b-0');
+            } else {
+                navbar.classList.remove('bg-deep-950/90', 'shadow-lg');
+                navbar.classList.add('border-b-0');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
