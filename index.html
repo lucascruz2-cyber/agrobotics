@@ -44,6 +44,10 @@
             background-size: cover;
             background-position: center;
         }
+        .logo-img {
+            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.2));
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="bg-deep-950 text-gray-200 font-sans antialiased selection:bg-agro-500 selection:text-white">
@@ -52,8 +56,9 @@
     <nav class="fixed w-full z-50 transition-all duration-300 glass-card border-b-0" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <i data-lucide="cpu" class="h-8 w-8 text-agro-500"></i>
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- Substituído ícone por LOGO_NOVA.jpeg -->
+                    <img src="LOGO_NOVA.jpeg" alt="Logo AgroBotics" class="h-12 w-auto rounded-lg logo-img">
                     <span class="font-bold text-2xl tracking-tight text-white">Agro<span class="text-agro-500">Botics</span></span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -110,7 +115,6 @@
                     </div>
                 </div>
                 <div class="hidden lg:block relative">
-                    <!-- Placeholder visual representation of the robot -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-agro-500/20 to-transparent rounded-full blur-3xl"></div>
                     <div class="relative glass-card rounded-2xl p-2 border border-gray-700 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
                         <img src="robo.png" onerror="this.src='https://images.unsplash.com/photo-1633526543814-9718c8922b7a?q=80&w=2070&auto=format&fit=crop'" alt="Robô quadrúpede no campo" class="rounded-xl w-full h-auto max-h-[650px] object-cover object-center opacity-90">
@@ -168,7 +172,7 @@
         </div>
     </section>
 
-    <!-- Diferenciais (Por que não drones?) -->
+    <!-- Diferenciais -->
     <section id="diferenciais" class="py-24 bg-deep-950 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
@@ -242,7 +246,6 @@
 
     <!-- Modelo de Negócio e ROI -->
     <section id="roi" class="py-24 bg-deep-900 relative overflow-hidden">
-        <!-- Decorational background -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-agro-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -253,7 +256,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Investimento -->
                 <div class="glass-card rounded-2xl p-8 border-t-4 border-gray-600">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="bg-gray-800 p-3 rounded-xl">
@@ -272,7 +274,6 @@
                     </ul>
                 </div>
 
-                <!-- Retorno -->
                 <div class="glass-card rounded-2xl p-8 border-t-4 border-agro-500 bg-agro-900/10">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="bg-agro-500/20 p-3 rounded-xl">
@@ -330,9 +331,6 @@
                     <p class="text-gray-400 text-lg mb-6 leading-relaxed">
                         Nossa solução não foca apenas na rentabilidade, mas na resolução de um desafio ambiental crítico. A pressão global por métricas ESG exige a redução drástica de defensivos químicos.
                     </p>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        Através da pulverização baseada em dados precisos, promovemos uma agricultura de precisão verdadeiramente sustentável, preservando o ecossistema local e oferecendo melhores condições de trabalho aos operadores de campo.
-                    </p>
                 </div>
             </div>
         </div>
@@ -343,7 +341,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-xl font-semibold text-gray-400 mb-8">Apoiado por um ecossistema de inovação e parceiros estratégicos</h3>
             <div class="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Logos textuais como placeholders -->
                 <div class="text-2xl font-bold text-white flex items-center gap-2">
                     <i data-lucide="building" class="w-6 h-6"></i> IF Goiano
                 </div>
@@ -360,7 +357,7 @@
                     <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Estágio Atual</span>
                 </div>
                 <p class="text-gray-300">
-                    <strong>Protótipo Testado.</strong> Rumo ao MVP em 12 meses com testes de campo (Transfer Learning em condições reais de luminosidade) e adequações regulatórias (segurança em robótica móvel e LGPD).
+                    <strong>Protótipo Testado.</strong> Rumo ao MVP em 12 meses com testes de campo e adequações regulatórias.
                 </p>
             </div>
         </div>
@@ -371,17 +368,15 @@
         <div class="absolute inset-0 bg-gradient-to-b from-deep-950 to-transparent opacity-90"></div>
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
             <h2 class="text-4xl font-bold text-white mb-6">Pronto para revolucionar sua lavoura?</h2>
-            <p class="text-xl text-gray-300 mb-10">Cadastre-se para ser um dos primeiros a receber nossa demonstração em campo no polo agrícola de Goiás.</p>
-            
             <form class="glass-card p-8 rounded-2xl text-left max-w-2xl mx-auto" onsubmit="event.preventDefault(); alert('Obrigado pelo interesse! Entraremos em contato em breve.');">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-2">Nome / Empresa</label>
-                        <input type="text" required class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500 focus:ring-1 focus:ring-agro-500 transition-colors" placeholder="João da Silva">
+                        <input type="text" required class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500" placeholder="João da Silva">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-2">Hectares Plantados</label>
-                        <select class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500 focus:ring-1 focus:ring-agro-500 transition-colors">
+                        <select class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500">
                             <option>Até 50 ha</option>
                             <option>51 a 200 ha</option>
                             <option>Mais de 200 ha</option>
@@ -390,7 +385,7 @@
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-gray-400 mb-2">E-mail de Contato</label>
-                    <input type="email" required class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500 focus:ring-1 focus:ring-agro-500 transition-colors" placeholder="contato@empresa.com.br">
+                    <input type="email" required class="w-full bg-deep-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-agro-500" placeholder="contato@empresa.com.br">
                 </div>
                 <button type="submit" class="w-full bg-agro-500 hover:bg-agro-600 text-white font-bold py-4 rounded-lg transition-colors flex justify-center items-center gap-2">
                     Solicitar Contato
@@ -403,12 +398,13 @@
     <!-- Footer -->
     <footer class="bg-deep-950 border-t border-gray-800 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center gap-2 mb-4 md:mb-0">
-                <i data-lucide="cpu" class="h-6 w-6 text-agro-500"></i>
+            <div class="flex items-center gap-3 mb-4 md:mb-0">
+                <!-- Substituído ícone por LOGO_NOVA.jpeg -->
+                <img src="LOGO_NOVA.jpeg" alt="Logo AgroBotics" class="h-10 w-auto rounded logo-img">
                 <span class="font-bold text-xl tracking-tight text-white">Agro<span class="text-agro-500">Botics</span></span>
             </div>
-            <div class="text-gray-500 text-sm text-center md:text-left">
-                &copy; 2026 AgroBotics. Todos os direitos reservados. Focado no Polo Agrícola de Goiás.
+            <div class="text-gray-500 text-sm text-center">
+                &copy; 2026 AgroBotics. Todos os direitos reservados.
             </div>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" class="text-gray-500 hover:text-agro-500 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
@@ -420,34 +416,19 @@
 
     <!-- Scripts -->
     <script>
-        // Inicializar ícones Lucide
         lucide.createIcons();
-
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 navbar.classList.add('bg-deep-950/90', 'shadow-lg');
-                navbar.classList.remove('border-b-0');
             } else {
                 navbar.classList.remove('bg-deep-950/90', 'shadow-lg');
-                navbar.classList.add('border-b-0');
             }
         });
-
-        // Mobile menu toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
-
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on click
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
         });
     </script>
 </body>
