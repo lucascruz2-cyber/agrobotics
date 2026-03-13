@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroBotics | Monitoramento Agrícola como Serviço (MaaS)</title>
+    <title>Monitoramento Agrícola como Serviço (MaaS)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -55,11 +55,10 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-300 glass-card border-b-0" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-3">
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="window.scrollTo(0,0)">
-                    <!-- Logo ainda maior (h-20 em mobile, h-28 em desktop) e formato PNG -->
-                    <img src="LOGO_NOVA.png" alt="Logo AgroBotics" class="h-20 md:h-28 w-auto rounded-xl logo-img">
-                    <span class="font-bold text-3xl md:text-4xl tracking-tight text-white">Agro<span class="text-agro-500">Botics</span></span>
+            <div class="flex justify-between items-center py-2">
+                <div class="flex-shrink-0 flex items-center cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="window.scrollTo(0,0)">
+                    <!-- Logo expandida (h-24 em mobile, h-32 em desktop) e sem texto ao lado -->
+                    <img src="LOGO_NOVA.png" alt="Logo" class="h-24 md:h-32 w-auto rounded-xl logo-img">
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#solucao" class="text-sm font-medium hover:text-agro-500 transition-colors">A Solução</a>
@@ -233,7 +232,7 @@
                             <div class="flex justify-between items-center p-4 rounded-lg bg-agro-900/40 border border-agro-500 mt-6 transform scale-105 shadow-lg shadow-agro-500/20">
                                 <span class="text-white font-bold flex items-center gap-2">
                                     <i data-lucide="check-circle" class="text-agro-500 w-5 h-5"></i>
-                                    AgroBotics (Nosso MaaS)
+                                    Nossa Solução (MaaS)
                                 </span>
                                 <span class="text-agro-400 text-sm font-bold">Contínuo, Preciso, Abaixo do Dossel</span>
                             </div>
@@ -294,32 +293,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Visão da Operação (Estratégia e Escalabilidade) -->
-            <div class="max-w-5xl mx-auto glass-card rounded-2xl p-6 md:p-8 border border-gray-700 bg-deep-950/50">
-                <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                    <i data-lucide="bar-chart-3" class="text-agro-500 w-5 h-5"></i> Viabilidade da Operação & Tração
-                </h4>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-3">Payback da Operação</h5>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-                            Com um <strong>CAPEX de R$ 75k</strong> por unidade robótica e o OPEX já coberto pela taxa base (R$ 1k/ha), o lucro da AgroBotics advém exclusivamente da Success Fee (estimada entre R$ 1,3k a R$ 1,5k/ha).
-                        </p>
-                        <div class="flex items-center gap-2 text-agro-400 font-semibold bg-agro-500/10 px-4 py-2 rounded-lg inline-flex">
-                            <i data-lucide="target" class="w-4 h-4"></i> Break-even do hardware em apenas 55 hectares.
-                        </div>
-                    </div>
-                    <div>
-                        <h5 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-3">Estratégia de Vendas</h5>
-                        <ul class="space-y-3 text-sm text-gray-400">
-                            <li class="flex items-start gap-2"><i data-lucide="building-2" class="text-agro-500 w-4 h-4 mt-0.5"></i> Parcerias B2B estratégicas com indústrias processadoras (prescritoras para os fornecedores).</li>
-                            <li class="flex items-start gap-2"><i data-lucide="sun" class="text-agro-500 w-4 h-4 mt-0.5"></i> Demonstrações ativas em Dias de Campo.</li>
-                            <li class="flex items-start gap-2"><i data-lucide="tent" class="text-agro-500 w-4 h-4 mt-0.5"></i> Participação em Feiras Agrícolas e de Inovação.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             
         </div>
     </section>
@@ -362,7 +335,7 @@
         </div>
     </section>
 
-    <!-- Parcerias e Estágio -->
+    <!-- Parcerias -->
     <section class="py-16 bg-deep-900 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-xl font-semibold text-gray-400 mb-8">Apoiado por um ecossistema de inovação e parceiros estratégicos</h3>
@@ -376,15 +349,6 @@
                 <div class="text-2xl font-bold text-white flex items-center gap-2">
                     <i data-lucide="sprout" class="w-6 h-6"></i> AgroGomes
                 </div>
-            </div>
-            
-            <div class="mt-16 max-w-3xl mx-auto glass-card p-6 rounded-2xl inline-block text-left">
-                <div class="flex items-center gap-4 mb-2">
-                    <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Estágio Atual</span>
-                </div>
-                <p class="text-gray-300">
-                    <strong>Protótipo Testado.</strong> Rumo ao MVP em 12 meses com testes de campo e adequações regulatórias.
-                </p>
             </div>
         </div>
     </section>
@@ -425,12 +389,11 @@
     <footer class="bg-deep-950 border-t border-gray-800 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-3 mb-4 md:mb-0 transform hover:scale-105 transition-transform duration-300">
-                <!-- Logo no rodapé também aumentada e em PNG -->
-                <img src="LOGO_NOVA.png" alt="Logo AgroBotics" class="h-20 md:h-28 w-auto rounded-xl logo-img">
-                <span class="font-bold text-3xl md:text-4xl tracking-tight text-white">Agro<span class="text-agro-500">Botics</span></span>
+                <!-- Logo no rodapé (grande e sem texto) -->
+                <img src="LOGO_NOVA.png" alt="Logo" class="h-24 md:h-32 w-auto rounded-xl logo-img">
             </div>
             <div class="text-gray-500 text-sm text-center">
-                &copy; 2026 AgroBotics. Todos os direitos reservados.
+                &copy; 2026. Todos os direitos reservados.
             </div>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" class="text-gray-500 hover:text-agro-500 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
